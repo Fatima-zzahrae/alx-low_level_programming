@@ -3,16 +3,16 @@
 #include <time.h>
 
 /**
- * main - paso
+ * main - Entry
  *
- * Return: int 0;
+ * Return: 0 (Success)
  */
 int main(void)
 {
 	char str[100];
 	int i = 0, randNum = 0, suma = 0;
 
-	srand (time(NULL));
+	srand(time(NULL));
 
 
 	for (i = 0; suma <= 2644; i++)
