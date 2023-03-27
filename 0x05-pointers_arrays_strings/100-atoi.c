@@ -1,32 +1,44 @@
-#include "holberton.h"
-
+#include "main.h"
+#include <stdio.h>
 /**
- * print_number - prints number
- * @n: the number to process.
- *
+ * _atoi - print the integer of a char.
+ * @s:  tested char
+ * Return: integer.
  */
-void print_number(int n)
+int _atoi(char *s)
 {
-	unsigned int num;
+	unsigned int counter, i, j, k, length, num, l;
+	int aux;
 
-	if (n < 10 && n >= 0)
+	aux = 1;
+	counter = 0;
+	num = 0;
+
+	while (*(s + counter) != '\0')
+		counter++;
+	for (i = 0; i < counter; i++)
 	{
-		_putchar('0' + n);
-		return;
+		if (*(s + i) <= '9' && *(s + i) >= '0')
+		break;
 	}
-	if (n < 0)
+	for (j = i; j < counter; j++)
 	{
-		num = -n;
-		_putchar('-');
-	}
-	else
-	{
-		num = n;
+		if (!(*(s + j) <= '9' && *(s + j) >= '0'))
+			break;
 	}
 
-	if (num >= 10)
+	for (k = 0; k < i; k++)
 	{
-		print_number(num / 10);
+		if (*(s + k) == '-')
+			aux = -aux;
 	}
-	_putchar('0' + (num % 10));
+	length = j - i;
+	l = i;
+		while (length >= 1)
+	{
+		num = num * 10 + (*(s + l) - '0');
+		l++;
+		length--;
+	}
+	return (num * aux);
 }
