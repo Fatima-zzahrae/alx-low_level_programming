@@ -1,13 +1,15 @@
 #include <stdio.h>
+#include "main.h"
 
-void __attribute__((constructor)) hare(void);
+void __attribute__((constructor)) primary(void);
 
 /**
- * hare - Prints a string before the
- *   main function is executed.
+ * primary - print before the main function
+ * Return: void
  */
-void hare(void)
+
+void primary(void)
 {
-printf("You're beat! and yet, you must allow,\n"
-"I bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\nI bore my house upon ");
+	printf("my back!\n");
 }
